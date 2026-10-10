@@ -1,1 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Abdallah Abdulkadir Abdallah | Official Website</title>
+
+<meta name="description"
+content="The official personal website of Abdallah Abdulkadir Abdallah, student, author, innovator and future engineer.">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --navy: #07172e;
+    --blue: #102b50;
+    --gold: #e7b94f;
+    --white: #ffffff;
+    --light: #f4f6fa;
+    --text: #26364b;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: var(--light);
+    line-height: 1.7;
+}
+
+header {
+    background: var(--navy);
+    color: white;
+    padding: 18px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+    border-bottom: 2px solid var(--gold);
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: var(--gold);
+}
+
+nav {
+    display: flex;
+    gap: 17px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: var(--gold);
+}
+
+.hero {
+    min-height: 570px;
+    padding: 80px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 45px;
+    flex-wrap: wrap;
+    color: white;
+    background:
+        radial-gradient(circle at 80% 20%,
+        #25456d 0, transparent 35%),
+        linear-gradient(135deg, var(--navy), var(--blue));
+}
+
+.hero-text {
+    flex: 1 1 300px;
+    animation: appear 1.2s ease;
+}
+
+.eyebrow {
+    color: var(--gold);
+    font-size: 13px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    font-size: clamp(36px, 6vw, 65px);
+    line-height: 1.12;
+    margin: 20px 0;
+}
+
+.hero h1 span {
+    color: var(--gold);
+}
+
+.hero h3 {
+    font-size: 19px;
+    color: #e2eaf6;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    max-width: 570px;
+    color: #d0dbea;
+    margin-bottom: 25px;
+}
+
+.button {
+    display: inline-block;
+    padding: 13px 23px;
+    background: var(--gold);
+    color: var(--navy);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: .3s;
+}
+
+.button:hover {
+    transform: translateY(-4px);
+    background: white;
+}
+
+.photo-box {
+    width: 260px;
+    height: 320px;
+    flex-shrink: 0;
+    border: 2px solid var(--gold);
+    border-radius: 130px 130px 15px 15px;
+    background: rgba(255,255,255,.06);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 25px;
+    color: white;
+    margin: auto;
+}
+
+.photo-box .symbol {
+    font-size: 65px;
+    color: var(--gold);
+}
+
+.photo-box p {
+    margin: 10px 0 0;
+    font-size: 13px;
+}
+
+section {
+    padding: 75px 8%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title small {
+    color: #9b741c;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.section-title h2 {
+    color: var(--navy);
+    font-size: clamp(28px, 4vw, 40px);
+    margin-top: 8px;
+}
+
+.section-title p {
+    max-width: 650px;
+    margin: 10px auto 0;
+    color: #647187;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #e3e8ef;
+    box-shadow: 0 8px 25px rgba(7,23,46,.06);
+    transition: transform .3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: var(--navy);
+    margin-bottom: 15px;
+}
+
+.gold-line {
+    height: 4px;
+    width: 48px;
+    background: var(--gold);
+    margin-bottom: 20px;
+}
+
+#book {
+    background: #e9edf4;
+}
+
+.book-card {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    border-radius: 12px;
+    padding: 35px;
+    border-left: 5px solid var(--gold);
+}
+
+.book-card h3 {
+    color: var(--navy);
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+}
+
+.project {
+    background: white;
+    padding: 28px;
+    border-radius: 12px;
+    border: 1px solid #e3e8ef;
+    box-shadow: 0 7px 20px rgba(7,23,46,.05);
+}
+
+.project .icon {
+    font-size: 40px;
+}
+
+.project h3 {
+    color: var(--navy);
+    margin: 15px 0 10px;
+}
+
+#ambition {
+    background: #e9edf4;
+}
+
+.ambition-box {
+    max-width: 900px;
+    margin: auto;
+    background: var(--navy);
+    color: white;
+    text-align: center;
+    padding: 45px 30px;
+    border-radius: 15px;
+    border-bottom: 5px solid var(--gold);
+}
+
+.ambition-box h2 {
+    color: var(--gold);
+    font-size: clamp(30px, 5vw, 44px);
+    margin: 10px 0;
+}
+
+.ambition-box p {
+    max-width: 650px;
+    margin: 15px auto 25px;
+    color: #d4dfed;
+}
+
+#contact {
+    text-align: center;
+}
+
+.contact-box {
+    max-width: 700px;
+    margin: auto;
+    padding: 35px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(7,23,46,.06);
+}
+
+footer {
+    background: #041021;
+    color: #d3dceb;
+    text-align: center;
+    padding: 30px 7%;
+    border-top: 3px solid var(--gold);
+}
+
+footer strong {
+    color: var(--gold);
+}
+
+footer p {
+    font-size: 13px;
+    margin: 5px;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 650px) {
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    .hero {
+        padding: 60px 7%;
+        text-align: center;
+    }
+
+    .hero p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .photo-box {
+        width: 220px;
+        height: 270px;
+    }
+
+    section {
+        padding: 55px 7%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">ABDALLAH <span>AA</span></div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#book">My Book</a>
+        <a href="#projects">Projects</a>
+        <a href="#ambition">My Ambition</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+
+    <div class="hero-text">
+        <div class="eyebrow">Welcome to my official website</div>
+
+        <h1>Abdallah<br>
+        <span>Abdulkadir Abdallah</span></h1>
+
+        <h3>Student | Author | Innovator | Future Engineer</h3>
+
+        <p>
+        Welcome to my world of creativity, science, innovation
+        and big ideas. I believe that every great invention begins
+        with curiosity, courage and the determination to learn.
+        </p>
+
+        <a class="button" href="#about">Discover My Story</a>
+    </div>
+
+    <div class="photo-box">
+        <div class="symbol">✦</div>
+        <strong>Your Photo Here</strong>
+        <p>Your personal photograph can be added to this space later.</p>
+    </div>
+
+</section>
+
+<section id="about">
+
+    <div class="section-title">
+        <small>Who I Am</small>
+        <h2>About Me</h2>
+        <p>Discover my interests, values and journey as a young innovator.</p>
+    </div>
+
+    <div class="about-content">
+
+        <div class="card">
+            <h3>My Story</h3>
+            <div class="gold-line"></div>
+            <p>
+            My name is Abdallah Abdulkadir Abdallah. I am a student,
+            aspiring author and young innovator with a passion for
+            creativity, science, technology and engineering.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>My Mission</h3>
+            <div class="gold-line"></div>
+            <p>
+            My mission is to keep learning, develop useful ideas,
+            encourage young people to believe in their abilities
+            and explore how innovation can improve our world.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>My Values</h3>
+            <div class="gold-line"></div>
+            <p>
+            I value knowledge, discipline, honesty, creativity,
+            teamwork and perseverance. I believe that success
+            comes through learning and consistent effort.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section id="book">
+
+    <div class="section-title">
+        <small>Writing & Creativity</small>
+        <h2>My Book</h2>
+        <p>Sharing ideas that encourage young people to discover their potential.</p>
+    </div>
+
+    <div class="book-card">
+        <h3>A Book for Young Innovators</h3>
+
+        <p>
+        I am developing an innovation book inspired by young people
+        who have talents and creative ideas but may lack the confidence
+        to share them with others.
+        </p>
+
+        <br>
+
+        <p>
+        Through writing, I hope to encourage readers to believe in
+        themselves, think creatively and take positive steps toward
+        achieving their goals.
+        </p>
+
+        <br>
+
+        <p><strong>Author:</strong> Abdallah Abdulkadir Abdallah</p>
+
+        <p><strong>Book title:</strong> Add the final title of your book here.</p>
+    </div>
+
+</section>
+
+<section id="projects">
+
+    <div class="section-title">
+        <small>Ideas Into Action</small>
+        <h2>My Innovations & Projects</h2>
+        <p>A growing collection of my interests, ideas and future projects.</p>
+    </div>
+
+    <div class="project-grid">
+
+        <div class="project">
+            <div class="icon">⚙️</div>
+            <h3>Engineering</h3>
+            <p>
+            Exploring how machines, structures and engineering
+            designs can solve practical problems.
+            </p>
+        </div>
+
+        <div class="project">
+            <div class="icon">🔬</div>
+            <h3>Science</h3>
+            <p>
+            Learning about Physics, Chemistry, Biology and
+            Mathematics to understand how the world works.
+            </p>
+        </div>
+
+        <div class="project">
+            <div class="icon">💡</div>
+            <h3>Creative Ideas</h3>
+            <p>
+            Developing ideas that could help students, schools,
+            communities and the environment.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="ambition">
+
+    <div class="ambition-box">
+
+        <div class="eyebrow">My Dream. My Future.</div>
+
+        <h2>Future Engineer</h2>
+
+        <p>
+        My ambition is to become an engineer who uses knowledge,
+        creativity and technology to design useful solutions.
+        I want to keep learning, build practical skills and turn
+        promising ideas into reality.
+        </p>
+
+        <a href="#contact" class="button">Let's Connect</a>
+
+    </div>
+
+</section>
+
+<section id="contact">
+
+    <div class="section-title">
+        <small>Get In Touch</small>
+        <h2>Contact Me</h2>
+        <p>Thank you for visiting my personal website.</p>
+    </div>
+
+    <div class="contact-box">
+        <h3>Let's Share Ideas</h3>
+
+        <p>
+        I welcome appropriate conversations about education,
+        creativity, engineering and innovation.
+        </p>
+
+        <br>
+
+        <p>
+        To add a contact method, replace this message with
+        a public professional email address when you are ready.
+        </p>
+    </div>
+
+</section>
+
+</main>
+
+<footer>
+    <p><strong>ABDALLAH ABDULKADIR ABDALLAH</strong></p>
+
+    <p>Student | Author | Innovator | Future Engineer</p>
+
+    <p>Dream Big. Innovate Boldly. Build the Future.</p>
+
+    <p>&copy; <span id="year"></span> All rights reserved.</p>
+</footer>
+
+<script>
+document.getElementById("year").textContent =
+new Date().getFullYear();
+</script>
+
+</body>
+</html>
